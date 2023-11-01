@@ -35,3 +35,10 @@ jobs:
         id: gradle
         run: |
           ./gradlew build
+          find build
+          # VERSION=$(./gradlew properties | grep 'version:' | awk '{print $2}')
+          # GROUP_PATH=$(./gradlew properties| grep "projectGroup" | awk '{print $2}' | sed 's/\./\//g')
+          # # Find the artifact JAR and POM files in the local repository.
+          # ARTIFACTS=$(find build/repo/$GROUP_PATH/*/$VERSION/* \
+          #     -type f \( \( -iname "*.jar" -not -iname "*-javadoc.jar" -not -iname "*-sources.jar" \) -or -iname "*.pom" \))
+          # echo $ARTIFACTS | tr ' ' ',' | sed 's/,$/\n/'
