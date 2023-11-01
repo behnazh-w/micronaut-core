@@ -34,7 +34,7 @@ jobs:
       - name: "🛠 Build with Gradle"
         id: gradle
         run: |
-          ./gradlew build
+          ./gradlew build publishAllPublicationsToBuildRepository
           find build
           # VERSION=$(./gradlew properties | grep 'version:' | awk '{print $2}')
           # GROUP_PATH=$(./gradlew properties| grep "projectGroup" | awk '{print $2}' | sed 's/\./\//g')
